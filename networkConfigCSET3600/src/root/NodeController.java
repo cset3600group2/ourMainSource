@@ -6,12 +6,13 @@ import root.virtualmachines.HostVM;
 import root.virtualmachines.FirewallVM;
 
 import java.util.List;
+import java.util.ArrayList;
 
 public class NodeController {//direct gui leverageable controller: carries out back-end for validation of config file generations, deletions, and additions to topology
 
-    private List<HostVM> currentHostVms;
-    private List<FirewallVM> currentFWVms;
-    private List<HubNode> currentHubNodes;
+    private List<HostVM> currentHostVms = new ArrayList<HostVM>();
+    private List<FirewallVM> currentFWVms = new ArrayList<FirewallVM>();
+    private List<HubNode> currentHubNodes = new ArrayList<HubNode>();
 
     public void addHostVM(){//triggered on drag and drop from gui
         currentHostVms.add(new HostVM());
