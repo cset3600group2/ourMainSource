@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.List;
 
+
 import root.virtualmachines.*;
 import root.networkobjects.*;
 
@@ -12,8 +13,8 @@ public class ConfigFile {
     public static String writeFile(NodeController controller) {
         String path = ".\\test.cfg";
         String outputText = "";
-        List<root.virtualmachines.HostVM> hosts = controller.getCurrentHostVms();
-        for (HostVM node : hosts) {
+        List<VM> hosts = controller.getCurrentVms();
+        for (VM node : hosts) {
             outputText += "vm " + node.getName() + " {\n" +
                     "        os : " + node.getOs() + "\n" +
                     "        ver : \"" + node.getVer() + "\"\n" +
