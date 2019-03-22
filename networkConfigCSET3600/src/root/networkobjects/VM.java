@@ -129,8 +129,7 @@ public class VM {
     };//contains a list of interface labels and their ip addresses
 
 
-
-    public VM(String name, String os, List<String> ipAddresses) {//passed from gui form
+    VM(String name, String os, List<String> ipAddresses) {//passed from gui form
 
         for (String ipAddress : ipAddresses) { //for each valid ip address submitted in the form, add an interface
             String intrfcLabel = "eth" + ipAddress.indexOf(ipAddress);
@@ -153,9 +152,6 @@ public class VM {
             this.setVer("7.3");
             this.setSrc("/srv/VMLibrary/JeOS");
         }
-    }
-    public VM(){//default constructor, only use for testing purposes
-
     }
 
 

@@ -1,5 +1,9 @@
 package root.networkobjects;
 
+import root.GuiController.HubandInterfMatch;
+
+import java.util.List;
+
 public class HubNode {
     private String name; //used as parent of record in config file e.g. 'vm Hub1 {...}'
 

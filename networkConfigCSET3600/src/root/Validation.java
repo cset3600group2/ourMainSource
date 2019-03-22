@@ -2,8 +2,8 @@ package root;
 
 import java.util.regex.Pattern;
 
-import root.hubs.HubInterface;
-import root.virtualmachines.VMInterface;
+import root.networkobjects.VMinterface;
+import root.networkobjects.HubInterface;
 
 public class Validation {
     private static final Pattern ipv4Pattern =
@@ -93,11 +93,11 @@ public class Validation {
         return true;
     }
 
-    public static boolean isValidInterfacePair(VMInterface vmIface, HubInterface hubIface)
+    public static boolean isValidInterfacePair(VMinterface vmIface, HubInterface hubIface)
     {
         // First check that the VM interface has a valid IPv4 address.
         if (!isIPv4(vmIface.getIpAddress())) {
-            System.err.println("Invalid VM address assigned to interface " + vmIface.getInterfaceLabel() + ": " +
+            System.err.println("Invalid VM address assigned to interface " + vmIface.getIntrfcLabel() + ": " +
                     vmIface.getIpAddress());
 
             return false;
@@ -121,4 +121,3 @@ public class Validation {
         return true;
     }
 }
-
