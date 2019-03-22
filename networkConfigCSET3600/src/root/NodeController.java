@@ -3,8 +3,6 @@ package root;
 import root.networkobjects.HubNode;
 import root.networkobjects.VM;
 import root.networkobjects.VMinterfPair;
-import root.virtualmachines.HostVM;
-import root.virtualmachines.FirewallVM;
 
 import java.util.List;
 import java.util.ArrayList;
