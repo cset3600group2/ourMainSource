@@ -1,12 +1,10 @@
 package root.networkobjects;
 
 import root.networkobjects.VM;
-import root.virtualmachines.VMInterface;
 
-public class HubInterface extends VMInterface {
+public class HubInterface {
     private String subnet; //must follow constraints of a subnet mask
     private String netMask;
-
 
     public void setSubnet(String subnet){
         this.subnet = subnet;

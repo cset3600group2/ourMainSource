@@ -1,5 +1,5 @@
 package root;
-import root.virtualmachines.*;
+
 import root.networkobjects.*;
 
 public class Test  {
@@ -8,7 +8,8 @@ public class Test  {
 
         //Set up host VMs
         for(int i = 0;i < 5; i++) {
-            controller.addHostVM(new VM());
+
+            // controller.addHostVM(new VM()); FIXME
             controller.getCurrentVms().get(i).setName("Blah-"+i);
             controller.getCurrentVms().get(i).setVer("1.0");
             controller.getCurrentVms().get(i).setOs("Windows");
@@ -17,7 +18,7 @@ public class Test  {
 
         //Set up Firewalls
         for(int i = 0;i < 5; i++) {
-            controller.addHostVM(new VM());
+            // controller.addHostVM(new VM()); FIXME
         }
 
         //Set up Hubs
