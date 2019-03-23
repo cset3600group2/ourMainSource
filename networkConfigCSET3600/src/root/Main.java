@@ -22,9 +22,8 @@ import javafx.stage.Stage;
 
 
 import java.awt.*;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.scene.control.Button;
@@ -38,6 +37,7 @@ import javafx.stage.FileChooser;
 public class Main extends Application { //holds all windows, components, and events pertaining to front-end
     private Label label = new Label();
     private Desktop desktop = Desktop.getDesktop();
+    public static NodeController nodeController = new NodeController();//Holds all current hosts and vms
 
 
     public static void main(String[] args) {
@@ -53,10 +53,14 @@ public class Main extends Application { //holds all windows, components, and eve
             primaryStage.setScene(scene);
             primaryStage.setTitle("V-Net: Network Mapper");
             primaryStage.show();
+            System.out.println("ok");
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
+
+
 
 
     private void saveConfigFile(String content, File file){
@@ -71,10 +75,28 @@ public class Main extends Application { //holds all windows, components, and eve
 
     }
 
-    private void openConfigFile(File file) {
+    private void openConfigFile(File file) {//generates objects from config file
         try {
-            desktop.open(file);
-        } catch (IOException ex) {
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            String currentLine;
+            String vm = "vm";
+            String rightBrace = "}";
+            String os = "os";
+            String eth = "eth";
+            java.util.List<String> supplierNames1 = new ArrayList<String>();
+
+            while ((currentLine = br.readLine()) != null)//reads line by line
+                if(currentLine.contains(vm)){
+                    int lengthofVm = vm.length();
+                    int firstIndex = currentLine.indexOf(vm);
+                    int spaceLength = 1;
+                    int indexOfName = spaceLength + firstIndex + lengthofVm;
+                    System.out.println(currentLine.substring(indexOfName));
+                }
+
+
+        }
+        catch (IOException ex) {
             Logger.getLogger(
                     Main.class.getName()).log(
                     Level.SEVERE, null, ex

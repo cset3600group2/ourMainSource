@@ -351,14 +351,14 @@ public class Graphics {
 	}
 
 	private static void vmBtnListener(VBox content, VM vmObject, Pane canvas, ContextMenu contextMenu) {
-	
+
 		MyController.btnEdit.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent event) {
-				
+
 				if (event.getButton() == MouseButton.PRIMARY) {
 					for (Node node : content.getChildren()) {
-						
+
 						if (node instanceof HBox) {
 							ObservableList<Node> childNode = ((HBox) node).getChildren();
 							for (int i = 0; i < childNode.size(); i++) {
@@ -366,7 +366,7 @@ public class Graphics {
 									((TextField) childNode.get(i)).editableProperty()
 											.bindBidirectional(MyController.btnEdit.selectedProperty());
 									if (MyController.btnEdit.isSelected()) {
-										
+
 										((TextField) childNode.get(i)).getStyleClass()
 												.remove("popover-form-textfield-inactive");
 										((TextField) childNode.get(i)).getStyleClass()
@@ -785,7 +785,7 @@ public class Graphics {
 		content.getChildren().add(btnRow);
 	}
 
-	public static void interfaceAdd(String labelText, VBox content) {
+	public static void interfaceAdd(String labelText, VBox content) {//KEEP
 		// this one is used for adding rows in the Insert New VM Form
 		HBox formRow = new HBox();
 		formRow.getStyleClass().add("vmform-infRow");
@@ -796,7 +796,7 @@ public class Graphics {
 		content.getChildren().add(formRow);
 	}
 
-	private static void creatAlert(String input, String type) {
+	private static void creatAlert(String input, String type) {//KEEP
 		Alert alert = new Alert(AlertType.ERROR);
 		alert.setTitle(input + " Input Error");
 		alert.setHeaderText("Interface Error");

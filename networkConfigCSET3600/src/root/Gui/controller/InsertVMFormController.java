@@ -59,7 +59,7 @@ public class InsertVMFormController implements Initializable{
 	
 
 	@FXML
-	private void addInfRow(){
+	private void addInfRow(){//appends label to interface and adds it
 		//format string for the eth# label
 		String eth = "eth";
 		String infName = eth + Integer.toString(index);
