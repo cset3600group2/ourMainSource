@@ -2,7 +2,7 @@ package root;
 
 import root.networkobjects.HubNode;
 import root.networkobjects.VM;
-import root.networkobjects.VMinterfPair;
+
 
 import java.util.List;
 import java.util.ArrayList;
@@ -18,7 +18,7 @@ public class NodeController {//direct gui leverageable controller: carries out b
     }
     public List<VM> getCurrentVms(){return this.currentVms;}
     public void removeHostVM(VM vm){
-        //remove the pair from HubInterface if applicable
+        //remove the pair from HubNode if applicable
         //to do
         //find index of the passed host from it's list and remove it
 
@@ -31,13 +31,7 @@ public class NodeController {//direct gui leverageable controller: carries out b
     }
     public void removeHubNode(int hubIndex){ //removes graphical hub and disconnects the interfaces that the hub was attached to
 /*
-        //remove gui representation then...
-        HubNode thisHub = getHubNodes().get(hubIndex);//disconnect all interfaces that were attached to hub
-        List<VMinterfPair> pairs = thisHub.getVMandIntrfcPairs();
-        for (int i =0; i<thisHub.getVMandIntrfcPairs().size(); i++){
-            pairs.get(i).getIntrfce().setDisconnected();
-        }
-        currentHubNodes.remove(hubIndex);
+TODO
         */
     }
 

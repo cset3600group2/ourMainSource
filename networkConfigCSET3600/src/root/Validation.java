@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 import root.networkobjects.VM;
 import root.networkobjects.HubNode;
 import root.networkobjects.VMinterface;
-import root.networkobjects.HubInterface;
+
 
 public class Validation {
     private static final Pattern ipv4Pattern =
@@ -97,7 +97,7 @@ public class Validation {
         return true;
     }
 
-    public static boolean isValidInterfacePair(VMinterface vmIface, HubInterface hubIface)
+    public static boolean isValidInterfacePair(VMinterface vmIface, HubNode hubNode)
     {
         // First check that the VM interface has a valid IPv4 address.
         if (!isIPv4(vmIface.getIpAddress())) {
@@ -109,15 +109,15 @@ public class Validation {
 
         // Extract network addresses from VM and Hub interfaces.
         int vmAddr = addressToInt(vmIface.getIpAddress());
-        int hubMask = addressToInt(hubIface.getNetMask());
-        int hubSubnet = addressToInt(hubIface.getSubnet());
+        int hubMask = addressToInt(hubNode.getNetmask());
+        int hubSubnet = addressToInt(hubNode.getSubnet());
         int vmNetAddr = extractNetworkAddressInt(vmAddr, hubMask);
         int hubNetAddr = extractNetworkAddressInt(hubSubnet, hubMask);
 
         // Check that the VM is connecting to a Hub in the same subnet.
         if (vmNetAddr != hubNetAddr) {
             System.err.println("VM interface address " + vmIface.getIpAddress() + " and Hub interface subnet " +
-                    hubIface.getSubnet() + " with mask " + hubIface.getNetMask() + " do not match.");
+                    hubNode.getSubnet() + " with mask " + hubNode.getNetmask() + " do not match.");
 
             return false;
         }

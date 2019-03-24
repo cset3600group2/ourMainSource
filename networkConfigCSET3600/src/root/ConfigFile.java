@@ -42,12 +42,7 @@ public class ConfigFile {
             for(VM vmObj : controller.getCurrentVms()) {
                 for(VMinterface ifaceVm : vmObj.getIntrfces()) {
 
-                    //Hub doesn't currently have an interface, so we'll make one here
-                    HubInterface ifaceHub = new HubInterface();
-                    ifaceHub.setNetMask(hubObj.getNetmask());
-                    ifaceHub.setSubnet(hubObj.getSubnet());
-
-                    if(isValidInterfacePair(ifaceVm,ifaceHub)) {
+                    if(isValidInterfacePair(ifaceVm,hubObj)) {
                         infList += vmObj.getName() + "." + ifaceVm.getIntrfcLabel() + ",";
                         partialSolution += TAB+"("+vmObj.getName()+"."+ifaceVm.getIntrfcLabel()+" "+"V2.vinf" + partialNumber + "),\n";
 
