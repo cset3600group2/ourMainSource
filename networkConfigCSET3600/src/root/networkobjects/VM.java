@@ -4,6 +4,7 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.ArrayList;
 
 public class VM {
     private String name; //vm alias i.e. host1
@@ -11,129 +12,19 @@ public class VM {
     private String ver;
     private String src;
 
-    private List<VMinterface> intrfces = new List<VMinterface>() {
-        @Override
-        public int size() {
-            return 0;
-        }
-
-        @Override
-        public boolean isEmpty() {
-            return false;
-        }
-
-        @Override
-        public boolean contains(Object o) {
-            return false;
-        }
-
-        @Override
-        public Iterator<VMinterface> iterator() {
-            return null;
-        }
-
-        @Override
-        public Object[] toArray() {
-            return new Object[0];
-        }
-
-        @Override
-        public <T> T[] toArray(T[] a) {
-            return null;
-        }
-
-        @Override
-        public boolean add(VMinterface vMinterface) {
-            return false;
-        }
-
-        @Override
-        public boolean remove(Object o) {
-            return false;
-        }
-
-        @Override
-        public boolean containsAll(Collection<?> c) {
-            return false;
-        }
-
-        @Override
-        public boolean addAll(Collection<? extends VMinterface> c) {
-            return false;
-        }
-
-        @Override
-        public boolean addAll(int index, Collection<? extends VMinterface> c) {
-            return false;
-        }
-
-        @Override
-        public boolean removeAll(Collection<?> c) {
-            return false;
-        }
-
-        @Override
-        public boolean retainAll(Collection<?> c) {
-            return false;
-        }
-
-        @Override
-        public void clear() {
-
-        }
-
-        @Override
-        public VMinterface get(int index) {
-            return null;
-        }
-
-        @Override
-        public VMinterface set(int index, VMinterface element) {
-            return null;
-        }
-
-        @Override
-        public void add(int index, VMinterface element) {
-
-        }
-
-        @Override
-        public VMinterface remove(int index) {
-            return null;
-        }
-
-        @Override
-        public int indexOf(Object o) {
-            return 0;
-        }
-
-        @Override
-        public int lastIndexOf(Object o) {
-            return 0;
-        }
-
-        @Override
-        public ListIterator<VMinterface> listIterator() {
-            return null;
-        }
-
-        @Override
-        public ListIterator<VMinterface> listIterator(int index) {
-            return null;
-        }
-
-        @Override
-        public List<VMinterface> subList(int fromIndex, int toIndex) {
-            return null;
-        }
-    };//contains a list of interface labels and their ip addresses
+    private List<VMinterface> intrfces = new ArrayList<VMinterface>();//contains a list of interface labels and their ip addresses
 
 
-    VM(String name, String os, List<String> ipAddresses) {//passed from gui form
+    public VM(String name, String os, List<String> ipAddresses) {//passed from gui form
 
+        this.name = name;
+        this.os = os;
+
+        int ethNumber = 0;
         for (String ipAddress : ipAddresses) { //for each valid ip address submitted in the form, add an interface
-            String intrfcLabel = "eth" + ipAddress.indexOf(ipAddress);
+            String intrfcLabel = "eth" + ethNumber;
             this.intrfces.add(new VMinterface(intrfcLabel, ipAddress));
+            ethNumber++;
         }
 
         //same version and src set for every vm: dependent on OS

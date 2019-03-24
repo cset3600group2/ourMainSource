@@ -9,8 +9,8 @@ import java.util.ArrayList;
 
 public class NodeController {//direct gui leverageable controller: carries out back-end for validation of config file generations, deletions, and additions to topology
 
-    private List<VM> currentVms;
-    private List<HubNode> currentHubNodes;
+    private List<VM> currentVms = new ArrayList<VM>();
+    private List<HubNode> currentHubNodes = new ArrayList<HubNode>();
 
 
     public void addHostVM(VM vm){//triggered on drag and drop from gui
