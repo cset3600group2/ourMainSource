@@ -47,9 +47,9 @@ public class Main extends Application { //holds all windows, components, and eve
     @Override
     public void start(Stage primaryStage) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/root/Gui/application/application.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/root/application.fxml"));
             Scene scene = new Scene(root);
-            scene.getStylesheets().add(getClass().getResource("/root/Gui/application/application.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("/root/application.css").toExternalForm());
             primaryStage.setScene(scene);
             primaryStage.setTitle("V-Net: Network Mapper");
             primaryStage.show();

@@ -46,6 +46,4 @@ public class NodeController {//direct gui leverageable controller: carries out b
 
 
 
-
-
 }

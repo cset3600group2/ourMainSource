@@ -14,6 +14,7 @@ public class HubNode {
 
     }
 
+
     public String getName(){
         return this.name;
     }

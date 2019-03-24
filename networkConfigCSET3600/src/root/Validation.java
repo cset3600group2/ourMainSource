@@ -1,19 +1,13 @@
 package root;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
-import root.Gui.application.PatternConfig;
 //import root.Gui.application.VM; not used: other derivation of vm
 import root.networkobjects.VM;
 import root.networkobjects.HubNode;
 import root.networkobjects.VMinterface;
 import root.networkobjects.HubInterface;
-import root.Main;
 
 public class Validation {
     private static final Pattern ipv4Pattern =
