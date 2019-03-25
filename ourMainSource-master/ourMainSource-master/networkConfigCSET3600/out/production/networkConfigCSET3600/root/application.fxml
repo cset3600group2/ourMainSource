@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="mainWindow" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="root.Controllers.ApplicationController">
+    <children>
+        <TabPane fx:id="tabPane" prefHeight="500.0" prefWidth="850.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+            <Tab onSelectionChanged="#tabGraphical" text="Topology View">
+                <content>
+                    <ScrollPane fx:id="scrollPane" prefHeight="200.0" prefWidth="200.0">
+                        <content>
+                            <AnchorPane fx:id="anchorPane">
+                                <children>
+                                    <Pane fx:id="canvas" minHeight="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0" />
+                                </children>
+                            </AnchorPane>
+                        </content>
+                        <contextMenu>
+                            <ContextMenu fx:id="contextMenu">
+                                <items>
+                                    <MenuItem mnemonicParsing="false" onAction="#insertNewHub" text="Insert New Hub" />
+                                    <MenuItem mnemonicParsing="false" onAction="#insertNewVm" text="Insert New Vm" />
+                                    <MenuItem fx:id="deleteMenu" disable="true" mnemonicParsing="false" text="Delete" />
+                                </items>
+                            </ContextMenu>
+                        </contextMenu>
+                    </ScrollPane>
+                </content>
+            </Tab>
+            <tabs>
+                <Tab closable="false" onSelectionChanged="#tabEditor" text="Output">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                            <children>
+                                <TextArea fx:id="textEditor" cache="true" editable="false" prefHeight="345.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+        <MenuBar maxHeight="-Infinity" minHeight="-Infinity" prefHeight="25.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#fileNew" text="New" />
+                        <MenuItem mnemonicParsing="false" onAction="#fileSave" text="Save" />
+                        <MenuItem mnemonicParsing="false" onAction="#fileSaveAs" text="SaveAs" />
+                        <MenuItem mnemonicParsing="false" onAction="#fileOpen" text="Open" />
+                        <MenuItem mnemonicParsing="false" onAction="#fileClose" text="Close" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </children>
+</AnchorPane>
