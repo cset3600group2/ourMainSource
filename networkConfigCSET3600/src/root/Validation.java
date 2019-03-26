@@ -33,7 +33,7 @@ public class Validation {
         return (address & mask);
     }
 
-    private static boolean isIPv4(String address)
+    public static boolean isIPv4(String address)//checks if any address follows ipv4 bit format
     {
         return ipv4Pattern.matcher(address).matches();
     }
@@ -57,7 +57,7 @@ public class Validation {
         return true;
     }
 
-    public static boolean isNetworkAddress(String address, String subnetMask)//for hubs ensures a network address is added
+    private static boolean isNetworkAddress(String address, String subnetMask)//leveraged locally
     {
         int addr = addressToInt(address);
         int mask = addressToInt(subnetMask);
@@ -66,7 +66,7 @@ public class Validation {
         return (addr == networkAddr);
     }
 
-    public static boolean isValidNetwork(String networkAddress, String subnetMask)//for hubs
+    public static boolean isValidNetwork(String networkAddress, String subnetMask)//checks if network is ipv4 compliant
     {
         // First check if supplied values are valid in IPv4.
         if (!isIPv4(networkAddress)) {
@@ -136,31 +136,31 @@ public class Validation {
     //added source
 
     public static boolean checkName(String name) {//checks if name is taken
-        boolean valid = true;
+
         try {
             if(name.trim().isEmpty()) {
-                valid = false;
+                return false;
             }else {
                 //check every hub
                 for(int i = 0; i<(Main.nodeController.getHubNodes().size()); i++) {
                     HubNode currentHub = Main.nodeController.getHubNodes().get(i);
                     if(currentHub.getName().toLowerCase().equals(name.trim().toLowerCase())) {
-                        valid = false;
+                        return false;
                     }
                 }
                 //check every vm
                 for(int i = 0; i<(Main.nodeController.getCurrentVms().size()); i++) {
                     VM currentVM = Main.nodeController.getCurrentVms().get(i);
                     if(currentVM.getName().toLowerCase().equals(name.trim().toLowerCase())) {
-                        valid = false;
+                        return false;
                     }
                 }
             }
         }catch(NullPointerException e) {
             System.out.println("Please enter a String");
-            valid = false;
+            return false;
         }
-        return valid;
+        return true;
     }
 
     /* TO BE ANALYZED
