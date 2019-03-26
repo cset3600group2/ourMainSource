@@ -18,7 +18,7 @@ public class NodeController {//direct gui leverageable controller: carries out b
     }
     public List<VM> getCurrentVms(){return this.currentVms;}
     public void removeHostVM(VM vm){
-        //remove the pair from HubNode if applicable
+        //remove the pair from HubInterface if applicable
         //to do
         //find index of the passed host from it's list and remove it
 
@@ -31,9 +31,17 @@ public class NodeController {//direct gui leverageable controller: carries out b
     }
     public void removeHubNode(int hubIndex){ //removes graphical hub and disconnects the interfaces that the hub was attached to
 /*
-TODO
+        //remove gui representation then...
+        HubNode thisHub = getHubNodes().get(hubIndex);//disconnect all interfaces that were attached to hub
+        List<VMinterfPair> pairs = thisHub.getVMandIntrfcPairs();
+        for (int i =0; i<thisHub.getVMandIntrfcPairs().size(); i++){
+            pairs.get(i).getIntrfce().setDisconnected();
+        }
+        currentHubNodes.remove(hubIndex);
         */
     }
+
+
 
 
 
