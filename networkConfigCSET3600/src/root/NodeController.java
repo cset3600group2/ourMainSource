@@ -1,5 +1,6 @@
 package root;
 
+import org.w3c.dom.Node;
 import root.networkobjects.HubNode;
 import root.networkobjects.VM;
 
@@ -13,13 +14,24 @@ public class NodeController {//direct gui leverageable controller: carries out b
     private List<HubNode> currentHubNodes = new ArrayList<HubNode>();
 
 
+    //create an object of SingleObject
+    private static NodeController nodeController = new NodeController();
+
+    //make the constructor private so that this class cannot be
+    //instantiated
+    private NodeController(){}
+
+    //Get the only object available
+    public static NodeController getNodeController(){
+        return nodeController;
+    }
     public void addHostVM(VM vm){//triggered on drag and drop from gui
         currentVms.add(vm);
     }
     public List<VM> getCurrentVms(){return this.currentVms;}
     public void removeHostVM(VM vm){
         //remove the pair from HubInterface if applicable
-        //to do
+        //TODO
         //find index of the passed host from it's list and remove it
 
     }
@@ -29,8 +41,8 @@ public class NodeController {//direct gui leverageable controller: carries out b
     public List<HubNode> getHubNodes(){
         return this.currentHubNodes;
     }
-    public void removeHubNode(int hubIndex){ //removes graphical hub and disconnects the interfaces that the hub was attached to
-/*
+    public void removeHubNode(int hubIndex){ //TODO
+/*T
         //remove gui representation then...
         HubNode thisHub = getHubNodes().get(hubIndex);//disconnect all interfaces that were attached to hub
         List<VMinterfPair> pairs = thisHub.getVMandIntrfcPairs();
@@ -39,6 +51,11 @@ public class NodeController {//direct gui leverageable controller: carries out b
         }
         currentHubNodes.remove(hubIndex);
         */
+    }
+
+    public void clear(){ //wipe the entire list of nodes, used before opening a config file
+        this.currentVms.clear();
+        this.currentHubNodes.clear();
     }
 
 

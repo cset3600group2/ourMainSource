@@ -136,21 +136,21 @@ public class Validation {
     //added source
 
     public static boolean checkName(String name) {//checks if name is taken
-
+         NodeController nodeController = NodeController.getNodeController();
         try {
             if(name.trim().isEmpty()) {
                 return false;
             }else {
                 //check every hub
-                for(int i = 0; i<(Main.nodeController.getHubNodes().size()); i++) {
-                    HubNode currentHub = Main.nodeController.getHubNodes().get(i);
+                for(int i = 0; i<(nodeController.getHubNodes().size()); i++) {
+                    HubNode currentHub = nodeController.getHubNodes().get(i);
                     if(currentHub.getName().toLowerCase().equals(name.trim().toLowerCase())) {
                         return false;
                     }
                 }
                 //check every vm
-                for(int i = 0; i<(Main.nodeController.getCurrentVms().size()); i++) {
-                    VM currentVM = Main.nodeController.getCurrentVms().get(i);
+                for(int i = 0; i<(nodeController.getCurrentVms().size()); i++) {
+                    VM currentVM = nodeController.getCurrentVms().get(i);
                     if(currentVM.getName().toLowerCase().equals(name.trim().toLowerCase())) {
                         return false;
                     }

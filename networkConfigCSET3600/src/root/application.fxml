@@ -52,9 +52,9 @@
             <menus>
                 <Menu mnemonicParsing="false" text="File">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#fileSaveAs" text="SaveAs" />
-                        <MenuItem mnemonicParsing="false" onAction="#fileOpen" text="Open" />
-                        <MenuItem mnemonicParsing="false" onAction="#fileClose" text="Close" />
+                        <MenuItem mnemonicParsing="false" onAction="#saveConfigFile" text="SaveAs" />
+                        <MenuItem mnemonicParsing="false" onAction="#openConfigFile" text="Open" />
+                        <MenuItem mnemonicParsing="false" onAction="#exitProgram" text="Close" />
                     </items>
                 </Menu>
             </menus>

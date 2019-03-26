@@ -35,9 +35,6 @@ import javafx.stage.FileChooser;
 
 
 public class Main extends Application { //holds all windows, components, and events pertaining to front-end
-    private Label label = new Label();
-    private Desktop desktop = Desktop.getDesktop();
-    public static NodeController nodeController = new NodeController();//Holds all current hosts and vms
 
 
     public static void main(String[] args) {
@@ -60,47 +57,4 @@ public class Main extends Application { //holds all windows, components, and eve
     }
 
 
-
-
-
-    private void saveConfigFile(String content, File file){
-        try {
-            FileWriter fileWriter = null;
-            fileWriter = new FileWriter(file);
-            fileWriter.write(content);
-            fileWriter.close();
-        } catch (IOException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-    }
-
-    private void openConfigFile(File file) {//generates objects from config file
-        try {
-            BufferedReader br = new BufferedReader(new FileReader(file));
-            String currentLine;
-            String vm = "vm";
-            String rightBrace = "}";
-            String os = "os";
-            String eth = "eth";
-            java.util.List<String> supplierNames1 = new ArrayList<String>();
-
-            while ((currentLine = br.readLine()) != null)//reads line by line
-                if(currentLine.contains(vm)){
-                    int lengthofVm = vm.length();
-                    int firstIndex = currentLine.indexOf(vm);
-                    int spaceLength = 1;
-                    int indexOfName = spaceLength + firstIndex + lengthofVm;
-                    System.out.println(currentLine.substring(indexOfName));
-                }
-
-
-        }
-        catch (IOException ex) {
-            Logger.getLogger(
-                    Main.class.getName()).log(
-                    Level.SEVERE, null, ex
-            );
-        }
-    }
 }

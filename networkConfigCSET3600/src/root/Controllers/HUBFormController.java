@@ -11,6 +11,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import root.Main;
+import root.NodeController;
 import root.Validation;
 import root.networkobjects.HubNode;
 
@@ -55,7 +56,7 @@ public class HUBFormController implements Initializable {
 		boolean checkSubnetandNetmask = Validation.isValidNetwork(hubSubnet, hubNetmask);
 
 		if(checkName && checkSubnetandNetmask) {//validation accepted
-			Main.nodeController.addHub(new HubNode(hubName, hubSubnet, hubNetmask));//create a hub
+			NodeController.getNodeController().addHub(new HubNode(hubName, hubSubnet, hubNetmask));//create a hub
 			Stage stage = (Stage) btnFinish.getScene().getWindow();
 			stage.close();
 		}else {
@@ -68,7 +69,6 @@ public class HUBFormController implements Initializable {
 				tfName.getStyleClass().add("hubform-invalid-field");
 				Alert alert = new Alert(Alert.AlertType.ERROR);
 				alert.setTitle("Input Error");
-				alert.setHeaderText("Input Error");
 				alert.setContentText("Name already exists.");
 				alert.showAndWait();
 			}
@@ -78,7 +78,6 @@ public class HUBFormController implements Initializable {
 				tfNetmask.getStyleClass().add("hubform-invalid-field");
 				Alert alert = new Alert(Alert.AlertType.ERROR);
 				alert.setTitle("Input Error");
-				alert.setHeaderText("Input Error");
 				alert.setContentText("Ip address must be a network address with a compatible netmask. Fields must also be ipv4 addresses.");
 				alert.showAndWait();
 			}

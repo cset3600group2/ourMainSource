@@ -11,7 +11,8 @@ import static root.Validation.isValidInterfacePair;
 public class ConfigFile {
     public static final String TAB = "        ";
 
-    public static String writeFile(NodeController controller, String path) {
+    public static String writeFile(String path) {
+        NodeController controller = NodeController.getNodeController();
         String outputText = "";
 
         String partialSolution = "";
@@ -77,7 +78,7 @@ public class ConfigFile {
     }
 
     public static NodeController readFile(String path) {
-        NodeController controller = new NodeController();
+        NodeController controller = NodeController.getNodeController();//retrieves the singleton instance
         String fileLine;
         String nodeType="", nodeName="", nodeSubnet="", nodeNetmask="", nodeOs="",attributeType="", attributeVal="";
         List<String> nodeIp = new ArrayList<String>();
