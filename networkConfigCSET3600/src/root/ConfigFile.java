@@ -5,13 +5,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+import javafx.scene.control.TextArea;
 import root.networkobjects.*;
 import static root.Validation.isValidInterfacePair;
 
 public class ConfigFile {
     public static final String TAB = "        ";
 
-    public static String writeFile(String path) {
+    public static void writeFile(String path) { //generates config to config file
         NodeController controller = NodeController.getNodeController();
         String outputText = "";
 
@@ -67,17 +68,67 @@ public class ConfigFile {
             PrintWriter out = new PrintWriter(path);
             out.write(outputText);
             out.flush();
+
             out.close();
 
-            return outputText;
+
         }
         catch (FileNotFoundException ex) {
             System.err.println(ex);
-            return "Error "+ex;
+
         }
     }
 
-    public static NodeController readFile(String path) {
+    public static void writeOutput(TextArea textEditor) {//generates config as text to output tab
+        NodeController controller = NodeController.getNodeController();
+        String outputText = "";
+
+        String partialSolution = "";
+        int partialNumber = 21;
+
+        for (VM vmObj : controller.getCurrentVms()) {
+            outputText += "vm " + vmObj.getName() + " {\n" +
+                    TAB+"os : " + vmObj.getOs() + "\n" +
+                    TAB+"ver : \"" + vmObj.getVer() + "\"\n" +
+                    TAB+"src : \"" + vmObj.getSrc() + "\"\n";
+            for (VMinterface iface : vmObj.getIntrfces()) {
+                outputText += TAB+iface.getIntrfcLabel()+" : \""+iface.getIpAddress()+"\"\n";
+            }
+            outputText += "}\n\n";
+        }
+
+        for (HubNode hubObj : controller.getHubNodes()) {
+            //Get inf for the hub
+            String infList = "";
+            for(VM vmObj : controller.getCurrentVms()) {
+                for(VMinterface ifaceVm : vmObj.getIntrfces()) {
+                    if(isValidInterfacePair(ifaceVm,hubObj)) {
+                        infList += vmObj.getName() + "." + ifaceVm.getIntrfcLabel() + ",";
+                        partialSolution += TAB+"("+vmObj.getName()+"."+ifaceVm.getIntrfcLabel()+" "+"V2.vinf" + partialNumber + "),\n";
+                    }
+                }
+            }
+            if(!infList.equals("")) {
+                infList = infList.substring(0, infList.length() - 1); //Remove last comma from list
+            }
+
+            outputText += "hub " + hubObj.getName() + " {\n" +
+                    TAB+"inf : "+ infList + "\n" +
+                    TAB+"subnet : \"" + hubObj.getSubnet() + "\"\n" +
+                    TAB+"netmask : \"" + hubObj.getNetmask() + "\"\n";
+            outputText += "}\n\n";
+            partialNumber++;
+        }
+
+        if(!partialSolution.equals("")) {
+            partialSolution = partialSolution.substring(0, partialSolution.length() - 2); //Remove last comma and line break from list
+            outputText += "partial_solution {\n" + partialSolution + "\n}";
+        }
+        textEditor.appendText((outputText));
+
+    }
+
+    public static void readFile(String path) {
         NodeController controller = NodeController.getNodeController();//retrieves the singleton instance
         String fileLine;
         String nodeType="", nodeName="", nodeSubnet="", nodeNetmask="", nodeOs="",attributeType="", attributeVal="";
@@ -129,6 +180,8 @@ public class ConfigFile {
         catch(IOException e){
             System.err.println(e);
         }
-        return controller;
     }
+
+
+
 }
