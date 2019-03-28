@@ -92,9 +92,6 @@ public class ApplicationController {
 		FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("CFG files (*.cfg)", "*.cfg"); //sets extension filter
 		fileChooser.getExtensionFilters().add(extFilter);
 		Scene scene = mainWindow.getScene();//grabs the scene from the window that initialized this event,  required for file selector
-
-
-
 		if (scene != null) {
 			Window window = scene.getWindow();
 			if (window != null) {
@@ -102,9 +99,6 @@ public class ApplicationController {
 				if (file != null) {
 
 					String filePath = file.getAbsolutePath();
-
-
-					NodeController.getNodeController().clear();//wipe all current nodes for new nodes to be generated
 					ConfigFile.writeFile(filePath);//generates the controller with the config file
 					/*//TODO TO BE REMOVED, ONLY A TEST
 					NodeController.getNodeController().addHostVM(new VM("ok", "ok", ips));
@@ -190,7 +184,6 @@ public class ApplicationController {
 			formWindow.initModality(Modality.WINDOW_MODAL);//forces entry to be done on the form before closing
 			formWindow.initOwner(scrollPane.getScene().getWindow());
 			formWindow.showAndWait();
-
 			ConfigFile.writeOutput(outputConfig);
 		}catch(Exception e){
 			e.printStackTrace();

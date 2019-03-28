@@ -45,9 +45,9 @@ public class HUBFormController implements Initializable {
 	}
 
 	@FXML
-	private void submitForm(){
+	private void submitForm(){//Validate input of the form and generate an object, otherwise indicate the error to the user
 
-		//Receieve input from user
+
 		String hubName = tfName.getText();
 		String hubSubnet = tfSubnet.getText();
 		String hubNetmask = tfNetmask.getText();
@@ -62,12 +62,7 @@ public class HUBFormController implements Initializable {
 			//TODO GraphicsController.draw(nodeController)
 			Stage stage = (Stage) btnFinish.getScene().getWindow();
 			stage.close();
-		}else {
-			//create a popup to warn user
-			//also highlight the input fields that are invalid
-
-
-
+		}else { //highlight invalid field and indicate where errors exist to user
 			if(!checkName) {
 				tfName.getStyleClass().add("hubform-invalid-field");
 				Alert alert = new Alert(Alert.AlertType.ERROR);

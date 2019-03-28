@@ -80,6 +80,7 @@ public class ConfigFile {
     }
 
     public static void writeOutput(TextArea textEditor) {//generates config as text to output tab
+        textEditor.clear();//clear text area for accurate representation of current config
         NodeController controller = NodeController.getNodeController();
         String outputText = "";
 
