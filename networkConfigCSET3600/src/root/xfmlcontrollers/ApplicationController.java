@@ -1,6 +1,6 @@
 package root.xfmlcontrollers;
 
-
+import javafx.scene.canvas.GraphicsContext;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,6 +15,8 @@ import javafx.stage.Stage;
 import javafx.stage.Window;
 import root.ConfigFile;
 import root.Main;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 import root.networkobjects.NodeController;
 import root.networkobjects.VM;
@@ -47,10 +49,6 @@ public class ApplicationController {
 	public static File currentFile = null;
 
 
-	@FXML
-	private void fileNew() {
-		//TODO
-	}
 	
 	@FXML
 	private void openConfigFile() {//Opens a file for the user to generate a fresh NodeController
@@ -181,14 +179,18 @@ public class ApplicationController {
 			formWindow.setResizable(false);
 
 
+
 			formWindow.initModality(Modality.WINDOW_MODAL);//forces entry to be done on the form before closing
 			formWindow.initOwner(scrollPane.getScene().getWindow());
 			formWindow.showAndWait();
 			ConfigFile.writeOutput(outputConfig);
+			refreshCanvas();
 		}catch(Exception e){
 			e.printStackTrace();
 		}
 	}
+
+
 
 
 
@@ -205,6 +207,19 @@ public class ApplicationController {
 		} catch (IOException ex) {
 			Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
 		}
+
+	}
+
+	private void refreshCanvas(){
+
+		// Load the Image
+		String imagePath = "Images/ROUTER.png";
+		Image image = new Image(imagePath);
+		GraphicsContext gc = canvas.getGraphicsContext2D();
+		// Draw the Image
+		gc.drawImage(image, 10, 10, 200, 200);
+		gc.drawImage(image, 220, 50, 100, 70);
+
 
 	}
 

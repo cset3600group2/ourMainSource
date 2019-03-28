@@ -1,6 +1,9 @@
 package root.networkobjects;
 
 public class HubNode {
+
+    private int posx;
+    private int posy;
     private String name; //used as parent of record in config file e.g. 'vm Hub1 {...}'
 
     private String subnet; //the network address itself
@@ -34,7 +37,19 @@ public class HubNode {
     public String getNetmask(){
         return this.netmask;
     }
+    public void setPosx(int posx) {
+        this.posx = posx;
+    }
+    public int getPosx(){
+        return this.posx;
+    }
+    public void setPosy(int posy){
+        this.posy = posy;
+    }
 
+    public int getPosy() {
+        return this.posy;
+    }
 
 
 }

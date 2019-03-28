@@ -1,5 +1,8 @@
 package root.networkobjects;
 
+import root.GraphicsController;
+import root.xfmlcontrollers.VMFormController;
+
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
@@ -7,6 +10,8 @@ import java.util.ListIterator;
 import java.util.ArrayList;
 
 public class VM {
+    private int posx;
+    private int posy;
     private String name; //vm alias i.e. host1
     private String os;
     private String ver;
@@ -43,6 +48,8 @@ public class VM {
             this.setVer("7.3");
             this.setSrc("/srv/VMLibrary/JeOS");
         }
+
+
     }
 
 
@@ -87,8 +94,19 @@ public class VM {
         return this.intrfces;
     }
 
+    public void setPosx(int posx) {
+        this.posx = posx;
+    }
+    public int getPosx(){
+        return this.posx;
+    }
+    public void setPosy(int posy){
+        this.posy = posy;
+    }
 
-
+    public int getPosy() {
+        return this.posy;
+    }
 }
 
 
