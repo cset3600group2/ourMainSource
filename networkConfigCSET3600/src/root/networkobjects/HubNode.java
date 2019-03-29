@@ -1,20 +1,23 @@
 package root.networkobjects;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class HubNode {
 
     private int posx;
     private int posy;
-    private String name; //used as parent of record in config file e.g. 'vm Hub1 {...}'
-
+    private String name; //used as parent of record in config file e.g. 'vm Hub1 {...}
     private String subnet; //the network address itself
     private String netmask; //the network subnet
+    private List<String> vmInterfaceNames;
 
     public HubNode(String name, String subnet, String netmask){//passed by authenticated gui form
 
         this.name = name;
         this.subnet = subnet;
         this.netmask = netmask;
-
+        vmInterfaceNames = new ArrayList<String>();
     }
 
 
@@ -51,5 +54,13 @@ public class HubNode {
         return this.posy;
     }
 
+    public List<String> getVmInterfaceNames()
+    {
+        return this.vmInterfaceNames;
+    }
 
+    public void addVmInterfaceName(String name)
+    {
+        this.vmInterfaceNames.add(name);
+    }
 }

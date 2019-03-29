@@ -12,8 +12,11 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import root.Validation;
 import root.NodeController;
+import root.networkobjects.HubNode;
 import root.networkobjects.VM;
 import root.GraphicsController;
+import root.networkobjects.VMinterface;
+
 import java.net.URL;
 import java.util.*;
 
@@ -96,7 +99,14 @@ public class VMFormController implements Initializable {
 
 
         if(checkName && checkOs && checkIntrfcAddresses) {//insert new VM  if all tests pass
-            NodeController.getNodeController().addHostVM(new VM(vmName, vmOs, ipAddresses));
+            VM newVM = new VM(vmName, vmOs, ipAddresses);
+            NodeController.getNodeController().addHostVM(newVM);
+            for (HubNode hubNode : NodeController.getNodeController().getHubNodes()) {
+                for (VMinterface iface : newVM.getIntrfces()) {
+                    if (Validation.isValidInterfacePair(iface, hubNode))
+                        hubNode.addVmInterfaceName(newVM.getName() + "." + iface.getIntrfcLabel());
+                }
+            }
             int indexoflast = NodeController.getNodeController().getCurrentVms().size();
             //ApplicationController.drawCurrentImgs();//draws img on canvas
             Stage stage = (Stage) btnFinish.getScene().getWindow();

@@ -32,7 +32,9 @@ public class ConfigFile {
 
         for (HubNode hubObj : controller.getHubNodes()) {
             //Get inf for the hub
+
             String infList = "";
+            /*
             for(VM vmObj : controller.getCurrentVms()) {
                 for(VMinterface ifaceVm : vmObj.getIntrfces()) {
                     if(isValidInterfacePair(ifaceVm,hubObj)) {
@@ -41,6 +43,13 @@ public class ConfigFile {
                     }
                 }
             }
+            */
+
+            for (String vmIfaceName: hubObj.getVmInterfaceNames()) {
+                infList += vmIfaceName + "," + " ";
+                partialSolution += TAB + "(" + vmIfaceName + " "+"V2.vinf" + partialNumber + "),\n";
+            }
+
             if(!infList.equals("")) {
                 infList = infList.substring(0, infList.length() - 1); //Remove last comma from list
             }
