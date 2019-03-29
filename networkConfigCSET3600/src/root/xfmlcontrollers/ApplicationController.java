@@ -14,6 +14,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 import root.ConfigFile;
+import root.GraphicsController;
 import root.Main;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -151,8 +152,8 @@ public class ApplicationController {
 			formWindow.initModality(Modality.WINDOW_MODAL); //forces entry to be done on the form before closing
 			formWindow.initOwner(scrollPane.getScene().getWindow());
 			formWindow.showAndWait();
-
-
+			GraphicsController.draw(canvas);
+			ConfigFile.writeOutput(outputConfig);
 			/*TODO
 			GraphicsController.draw(canvas, contextMenu);
 			GraphicsController.draw(canvas, contextMenu);
@@ -177,12 +178,10 @@ public class ApplicationController {
 			formWindow.setScene(scene);
 			formWindow.setFullScreen(false);
 			formWindow.setResizable(false);
-
-
-
 			formWindow.initModality(Modality.WINDOW_MODAL);//forces entry to be done on the form before closing
 			formWindow.initOwner(scrollPane.getScene().getWindow());
 			formWindow.showAndWait();
+			GraphicsController.draw(canvas);
 			ConfigFile.writeOutput(outputConfig);
 		}catch(Exception e){
 			e.printStackTrace();

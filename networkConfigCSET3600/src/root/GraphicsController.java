@@ -48,7 +48,7 @@ public class GraphicsController{
     private static final int NODE_WIDTH = 100;
 
     private static Node hubInsertNode(HubNode hubNode, Pane canvas /*, ContextMenu contextMenu */) {
-        Image image = new Image("Images/HUB.png");
+        Image image = new Image("root/Images/Hub.png");
         ImagePattern imagePattern = new ImagePattern(image);
 
         Rectangle node = new Rectangle(NODE_LENGTH, NODE_WIDTH);
@@ -64,8 +64,8 @@ public class GraphicsController{
         nodeContainer.getChildren().addAll(node, lnodeName);
         nodeContainer.relocate(hubNode.getPosx(), hubNode.getPosy());
 
-/*
-        nodeContainer.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
+
+     /* TODO  nodeContainer.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
                 if (event.getButton() == MouseButton.PRIMARY) {
@@ -111,26 +111,22 @@ public class GraphicsController{
                 }
             }
         });
-*/
+        */
+
         return nodeContainer;
     }
 
-    private static void createLine(Pane canvas, int startX, int startY, int endX, int endY) {
-        Line createLine = new Line();
-        createLine.setStartX(startX);
-        createLine.setStartY(startY);
-        createLine.setEndX(endX);
-        createLine.setEndY(endY);
-        canvas.getChildren().add(createLine);
 
-    }
+
+
+
 
     public static void draw(Pane canvas) {
         canvas.getChildren().clear();
         canvas.getChildren().add(createVlanNode());
 
         int tempPosX = 250;
-        int tempPosY = 250;
+        int tempPosY = 50;
 
 
         for (HubNode hubNode : NodeController.getNodeController().getHubNodes()) {
@@ -146,7 +142,7 @@ public class GraphicsController{
                 createLine(canvas, tempPosX + 100, tempPosY + 50, tempPosX + 150, tempPosY + 50);
             }
 
-            /*
+            /*TODO PLACING VMS
             tempPosX += 200;
             for (Map.Entry<String, VM> vmEntry : application.PatternConfig.vmMap.entrySet()) {
                 String currentVMName = vmEntry.getKey();
@@ -189,6 +185,16 @@ public class GraphicsController{
         }
     }
 
+    private static void createLine(Pane canvas, int startX, int startY, int endX, int endY) {
+        Line createLine = new Line();
+        createLine.setStartX(startX);
+        createLine.setStartY(startY);
+        createLine.setEndX(endX);
+        createLine.setEndY(endY);
+        canvas.getChildren().add(createLine);
+
+    }
+
     private static Node createVlanNode() {
         int infNumber = 0;
         NodeController nodeController = NodeController.getNodeController();
@@ -209,7 +215,7 @@ public class GraphicsController{
         int vlanHeight = ((infNumber * 100) + ((infNumber -1) * 50));
 
 
-        Image routerImg = new Image("Images/ROUTER.png");  //Selecting the Location of the router
+        Image routerImg = new Image("root/Images/ROUTER.png");  //Selecting the Location of the router
         // each hub is represented by a blue rectangle
         //imageContainer.addAll(new Rectangle(64, 48, Color.CORNFLOWERBLUE), image); //new Rectangle(PatternConfig.nodeLength, PatternConfig.nodeWidth);
 
@@ -225,6 +231,7 @@ public class GraphicsController{
 
         return nodeContainer;
     }
+
 
 
 

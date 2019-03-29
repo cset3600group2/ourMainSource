@@ -12,7 +12,7 @@ import static root.Validation.isValidInterfacePair;
 public class ConfigFile {
     public static final String TAB = "        ";
 
-    public static void writeFile(String path) { //generates config to config file
+    public static String writeFile(String path) { //generates config to config file
         NodeController controller = NodeController.getNodeController();
         String outputText = "";
 
@@ -86,6 +86,7 @@ public class ConfigFile {
             System.err.println(ex);
 
         }
+        return outputText;
     }
 
     public static void writeOutput(TextArea textEditor) {//generates config as text to output tab
@@ -110,16 +111,15 @@ public class ConfigFile {
         for (HubNode hubObj : controller.getHubNodes()) {
             //Get inf for the hub
             String infList = "";
-            for(VM vmObj : controller.getCurrentVms()) {
-                for(VMinterface ifaceVm : vmObj.getIntrfces()) {
-                    if(isValidInterfacePair(ifaceVm,hubObj)) {
-                        infList += vmObj.getName() + "." + ifaceVm.getIntrfcLabel() + ",";
-                        partialSolution += TAB+"("+vmObj.getName()+"."+ifaceVm.getIntrfcLabel()+" "+"V2.vinf" + partialNumber + "),\n";
-                    }
-                }
+
+
+            for (String vmIfaceName: hubObj.getVmInterfaceNames()) {
+                infList += vmIfaceName + "," + " ";
+                partialSolution += TAB + "(" + vmIfaceName + " "+"V2.vinf" + partialNumber + "),\n";
             }
+
             if(!infList.equals("")) {
-                infList = infList.substring(0, infList.length() - 1); //Remove last comma from list
+                infList = infList.substring(0, infList.length() - 2); //Remove last comma from list
             }
 
             outputText += "hub " + hubObj.getName() + " {\n" +
@@ -185,6 +185,14 @@ public class ConfigFile {
                     nodeType="";
                 }
 
+            }
+            for (HubNode hubNode : NodeController.getNodeController().getHubNodes()) {
+                for (VM vm: NodeController.getNodeController().getCurrentVms()) {
+                    for (VMinterface iface : vm.getIntrfces()) {
+                        if (Validation.isValidInterfacePair(iface, hubNode))
+                            hubNode.addVmInterfaceName(vm.getName() + "." + iface.getIntrfcLabel());
+                    }
+                }
             }
         }
         catch(IOException e){
