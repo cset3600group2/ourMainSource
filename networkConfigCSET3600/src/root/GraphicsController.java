@@ -22,7 +22,7 @@ import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.controlsfx.control.PopOver;
+//import org.controlsfx.control.PopOver;
 
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -53,7 +53,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.WindowEvent;
 
 public class GraphicsController {//
-    //create an object of SingleObject
+    /*//create an object of SingleObject
     private static GraphicsController graphicsController = new GraphicsController();
     public NodeController nodeController = NodeController.getNodeController();//used to keep track of where to position vms
 
@@ -823,5 +823,5 @@ public class GraphicsController {//
         alert.show();
     }
 
-
+*/
 }

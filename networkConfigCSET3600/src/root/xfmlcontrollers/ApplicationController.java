@@ -215,10 +215,10 @@ public class ApplicationController {
 		// Load the Image
 		String imagePath = "Images/ROUTER.png";
 		Image image = new Image(imagePath);
-		GraphicsContext gc = canvas.getGraphicsContext2D();
+		//GraphicsContext gc = canvas.getGraphicsContext2D();
 		// Draw the Image
-		gc.drawImage(image, 10, 10, 200, 200);
-		gc.drawImage(image, 220, 50, 100, 70);
+		//gc.drawImage(image, 10, 10, 200, 200);
+		//gc.drawImage(image, 220, 50, 100, 70);
 
 
 	}

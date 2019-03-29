@@ -98,7 +98,7 @@ public class VMFormController implements Initializable {
         if(checkName && checkOs && checkIntrfcAddresses) {//insert new VM  if all tests pass
             NodeController.getNodeController().addHostVM(new VM(vmName, vmOs, ipAddresses));
             int indexoflast = NodeController.getNodeController().getCurrentVms().size();
-            ApplicationController.drawCurrentImgs();//draws img on canvas
+            //ApplicationController.drawCurrentImgs();//draws img on canvas
             Stage stage = (Stage) btnFinish.getScene().getWindow();
             stage.close();
         } else { //highlight invalid field and indicate where errors exist to user
