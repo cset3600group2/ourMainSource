@@ -11,7 +11,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import root.Validation;
-import root.networkobjects.NodeController;
+import root.NodeController;
 import root.networkobjects.VM;
 import root.GraphicsController;
 import java.net.URL;

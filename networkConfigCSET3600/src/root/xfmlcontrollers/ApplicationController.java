@@ -18,7 +18,7 @@ import root.Main;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-import root.networkobjects.NodeController;
+import root.NodeController;
 import root.networkobjects.VM;
 
 import java.io.*;

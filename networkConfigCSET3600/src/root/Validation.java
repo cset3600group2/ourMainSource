@@ -6,7 +6,6 @@ import java.util.regex.Pattern;
 
 
 //import root.Gui.application.VM; not used: other derivation of vm
-import root.networkobjects.NodeController;
 import root.networkobjects.VM;
 import root.networkobjects.HubNode;
 import root.networkobjects.VMinterface;

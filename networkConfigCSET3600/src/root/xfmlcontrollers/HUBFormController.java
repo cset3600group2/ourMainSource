@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 
 import root.ConfigFile;
 import root.GraphicsController;
-import root.networkobjects.NodeController;
+import root.NodeController;
 import root.Validation;
 import root.networkobjects.HubNode;
 
