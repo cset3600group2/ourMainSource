@@ -9,22 +9,16 @@ import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javafx.scene.control.*;
 import org.controlsfx.control.PopOver;
+import root.networkobjects.VM;
 
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Orientation;
 import javafx.scene.Node;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.Button;
-import javafx.scene.control.ContextMenu;
-import javafx.scene.control.Control;
-import javafx.scene.control.Label;
-import javafx.scene.control.Separator;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleButton;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
@@ -47,7 +41,7 @@ public class GraphicsController{
     private static final int NODE_LENGTH = 100;
     private static final int NODE_WIDTH = 100;
 
-    private static Node hubInsertNode(HubNode hubNode, Pane canvas /*, ContextMenu contextMenu */) {
+    private static Node hubInsertNode(HubNode hubNode, Pane canvas , ContextMenu contextMenu) {
         Image image = new Image("root/Images/Hub.png");
         ImagePattern imagePattern = new ImagePattern(image);
 
@@ -65,40 +59,17 @@ public class GraphicsController{
         nodeContainer.relocate(hubNode.getPosx(), hubNode.getPosy());
 
 
-     /* TODO  nodeContainer.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
+        nodeContainer.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
-                if (event.getButton() == MouseButton.PRIMARY) {
-                    PopOver popOver = new PopOver(insertHUBpoContent(hubObject, canvas, contextMenu));
-
-                    popOver.show(nodeContainer);
-                    popOver.setOnHiding(new EventHandler<WindowEvent>() {
-                        @Override
-                        public void handle(WindowEvent e) {
-                            hideHubNodeListener(popOver, hubObject, canvas, contextMenu);
-                        }
-                    });
-                }
+                NodeController nodeController = NodeController.getNodeController();
                 if (event.getButton() == MouseButton.SECONDARY) {
-                    contextMenu.getItems().get(2).setDisable(false);
-
+                    contextMenu.getItems().get(2).setDisable(false);//allows deletion option of the stack pane object 'nodeContainer'
                     contextMenu.getItems().get(2).setOnAction(new EventHandler<ActionEvent>() {
                         @Override
                         public void handle(ActionEvent e) {
-                            String hubName = hubObject.getName();
-                            TreeSet<String> interfaces = hubObject.getInfs();
-                            for (String inf : interfaces) {
-                                Pattern pattern1 = Pattern.compile(PatternConfig.hubInfPattern);
-                                Matcher matcher = pattern1.matcher(inf);
-                                if (matcher.find()) {
-                                    String vmName = matcher.group(1);
-                                    String vmEth = matcher.group(2);
-                                    PatternConfig.vmMap.get(vmName).removeInf(vmEth);
-                                }
-                            }
-
-                            PatternConfig.hubMap.remove(hubName);
-                            draw(canvas, contextMenu);
+                            String hubName = hubNode.getName();
+                            nodeController.removeHubNode(hubName);
                         }
                     });
 
@@ -111,17 +82,63 @@ public class GraphicsController{
                 }
             }
         });
-        */
 
         return nodeContainer;
     }
 
 
+    /*TODO private static Node vmInsertNode(VM vmNode, Pane canvas , ContextMenu contextMenu) {
+        Image image = new Image("root/Images/Hub.png");
+        ImagePattern imagePattern = new ImagePattern(image);
+
+        Rectangle node = new Rectangle(NODE_LENGTH, NODE_WIDTH);
+        node.setFill(imagePattern);
+
+        //TODO Label lnodeName = new Label("HUB: " + vmNode.getName()+ "\n" + "IP: " + vmNode.get() + "\n" + "NetMask: " + hubNode.getNetmask());
+
+        //lnodeName.setOpacity(0.5);
+        //TODO lnodeName.setStyle("-fx-background-color: rgba(255,255,255,0.6); -fx-font-size: 8; ");
+
+
+        StackPane nodeContainer = new StackPane();
+        nodeContainer.getChildren().addAll(node, lnodeName);
+        nodeContainer.relocate(hubNode.getPosx(), hubNode.getPosy());
+
+
+        nodeContainer.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                NodeController nodeController = NodeController.getNodeController();
+                if (event.getButton() == MouseButton.SECONDARY) {
+                    contextMenu.getItems().get(2).setDisable(false);//allows deletion option of the stack pane object 'nodeContainer'
+                    contextMenu.getItems().get(2).setOnAction(new EventHandler<ActionEvent>() {
+                        @Override
+                        public void handle(ActionEvent e) {
+                            String hubName = hubNode.getName();
+                            nodeController.removeHubNode(hubName);
+                        }
+                    });
+
+                    contextMenu.setOnHidden(new EventHandler<WindowEvent>() {
+                        @Override
+                        public void handle(WindowEvent e) {
+                            contextMenu.getItems().get(2).setDisable(true);
+                        }
+                    });
+                }
+            }
+        });
+
+        return nodeContainer;
+    }
+    */
 
 
 
 
-    public static void draw(Pane canvas) {
+
+
+    public static void draw(Pane canvas, ContextMenu contextMenu) {//redraw everything when a form is completed, or file is loaded
         canvas.getChildren().clear();
         canvas.getChildren().add(createVlanNode());
 
@@ -134,7 +151,7 @@ public class GraphicsController{
             String currentHubName = hubNode.getName();
             hubNode.setPosx(tempPosX);
             hubNode.setPosy(tempPosY);
-            canvas.getChildren().add(hubInsertNode(hubNode, canvas));
+            canvas.getChildren().add(hubInsertNode(hubNode, canvas, contextMenu));
 
             boolean haveConnections = !hubNode.getVmInterfaceNames().isEmpty();
 

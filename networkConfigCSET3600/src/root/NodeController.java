@@ -29,7 +29,18 @@ public class NodeController {//direct gui leverageable controller: carries out b
         currentVms.add(vm);
     }
     public List<VM> getCurrentVms(){return this.currentVms;}
-    public void removeHostVM(VM vm){
+    public void removeVM(String vmName){
+        VM vm = null;
+        for (VM vminCtrler: currentVms) {
+            if (vminCtrler.getName().equals(vmName)) {
+                vm = vminCtrler;
+            }
+
+        }
+        if (vm!= null){
+            currentVms.remove(vm);
+        }
+
         //remove the pair from HubInterface if applicable
         //TODO
         //find index of the passed host from it's list and remove it
@@ -39,18 +50,22 @@ public class NodeController {//direct gui leverageable controller: carries out b
         currentHubNodes.add(hubNode);
     }
     public List<HubNode> getHubNodes(){
-        return this.currentHubNodes;
+        return currentHubNodes;
     }
-    public void removeHubNode(int hubIndex){ //TODO
-/*T
-        //remove gui representation then...
-        HubNode thisHub = getHubNodes().get(hubIndex);//disconnect all interfaces that were attached to hub
-        List<VMinterfPair> pairs = thisHub.getVMandIntrfcPairs();
-        for (int i =0; i<thisHub.getVMandIntrfcPairs().size(); i++){
-            pairs.get(i).getIntrfce().setDisconnected();
+    public void removeHubNode(String hubName){
+        HubNode hub = null;
+       for (HubNode hubinCtrler: currentHubNodes) {
+            if (hubinCtrler.getName().equals(hubName)) {
+                hub = hubinCtrler;
+                System.out.println(hub.getName());
+            }
+
         }
-        currentHubNodes.remove(hubIndex);
-        */
+       if (hub!= null){
+           currentHubNodes.remove(hub);
+        }
+
+
     }
 
     public void clear(){ //wipe the entire list of nodes, used before opening a config file
