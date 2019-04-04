@@ -2,44 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e3805878-8466-4f40-9119-62d0c26fb20e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/controlsfx_8_40_141.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/networkConfigCSET3600.iml" beforeDir="false" afterPath="$PROJECT_DIR$/networkConfigCSET3600.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/networkConfigCSET3600/META-INF/networkConfigCSET3600.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/ConfigFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/ConfigFile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/Controllers/ApplicationController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/Controllers/FileController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/Controllers/GraphicsController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/Controllers/HUBFormController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/Controllers/VMFormController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/GraphicsController$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/GraphicsController$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/GraphicsController$1$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/GraphicsController$1$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/GraphicsController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/GraphicsController$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/GraphicsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/GraphicsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/GuiController/GuiController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/GuiController/HubandInterfMatch.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/Images/COMPUTER.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/Images/COMPUTER.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/Images/HUB.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/Images/HUB.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/NodeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/NodeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/Test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/application.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/application.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/application.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/application.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/hubs/HubInterface.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/hubs/HubNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/hubs/VMandIntrfcPair.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/insertnewhubform.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/insertnewhubform.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/insertnewvmform.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/insertnewvmform.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/networkobjects/NodeController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/networkobjects/VM$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/virtualmachines/FirewallVM.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/virtualmachines/HostVM.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/virtualmachines/VMInterface.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/virtualmachines/VMNode$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/virtualmachines/VMNode$OSWINLIN.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/virtualmachines/VMNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/networkobjects/HubNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/networkobjects/HubNode.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/xfmlcontrollers/ApplicationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/xfmlcontrollers/ApplicationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/xfmlcontrollers/HUBFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/xfmlcontrollers/HUBFormController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/xfmlcontrollers/VMFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/networkConfigCSET3600/root/xfmlcontrollers/VMFormController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/root/GraphicsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/root/GraphicsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/root/Images/COMPUTER.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/root/Images/COMPUTER.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/root/Images/HUB.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/root/Images/HUB.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/root/NodeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/root/NodeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/root/networkobjects/HubNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/root/networkobjects/HubNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/root/xfmlcontrollers/ApplicationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/root/xfmlcontrollers/ApplicationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/root/xfmlcontrollers/HUBFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/root/xfmlcontrollers/HUBFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/root/xfmlcontrollers/VMFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/root/xfmlcontrollers/VMFormController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,47 +31,32 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/root/GraphicsController.java">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/root/NodeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1078">
-              <caret line="133" column="6" selection-start-line="133" selection-start-column="6" selection-end-line="133" selection-end-column="6" />
+            <state relative-caret-position="149">
+              <caret line="75" column="16" selection-start-line="75" selection-start-column="16" selection-end-line="75" selection-end-column="38" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2936#2937#0" expanded="true" />
-                <element signature="e#3038#3039#0" expanded="true" />
+                <element signature="e#1454#1455#0" expanded="true" />
+                <element signature="e#1498#1499#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/root/xfmlcontrollers/VMFormController.java">
+        <entry file="file://$PROJECT_DIR$/src/root/networkobjects/HubNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/javafx.base/javafx/event/Event.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="197" selection-start-line="197" selection-end-line="197" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/javafx.graphics/javafx/scene/Scene.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="2613" selection-start-line="2613" selection-end-line="2613" />
+            <state relative-caret-position="302">
+              <caret line="70" column="10" selection-start-line="70" selection-start-column="10" selection-end-line="70" selection-end-column="10" />
               <folding>
-                <element signature="e#70522#70523#0" expanded="true" />
-                <element signature="e#70568#70569#0" expanded="true" />
+                <element signature="e#1269#1270#0" expanded="true" />
+                <element signature="e#1301#1302#0" expanded="true" />
+                <element signature="e#1754#1755#0" expanded="true" />
+                <element signature="e#1785#1786#0" expanded="true" />
+                <element signature="e#1773#1774#0" expanded="true" />
+                <element signature="e#1820#1821#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -98,65 +65,107 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/root/xfmlcontrollers/HUBFormController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-391">
-              <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+            <state relative-caret-position="302">
+              <caret line="61" column="4" selection-start-line="61" selection-start-column="4" selection-end-line="62" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/javafx.controls/javafx/scene/control/MenuItem.java">
+        <entry file="file://$PROJECT_DIR$/src/root/ConfigFile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="308" selection-start-line="308" selection-end-line="308" />
+            <state relative-caret-position="369">
+              <caret line="192" column="36" selection-start-line="192" selection-start-column="36" selection-end-line="192" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/root/GraphicsController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="731">
+              <caret line="111" column="21" selection-start-line="111" selection-start-column="21" selection-end-line="111" selection-end-column="21" />
               <folding>
-                <element signature="e#10201#10202#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/javafx.base/javafx/beans/property/BooleanPropertyBase.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="138" selection-start-line="138" selection-end-line="138" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/root/NodeController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="799">
-              <caret line="59" column="20" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="20" />
-              <folding>
-                <element signature="e#1287#1288#0" expanded="true" />
-                <element signature="e#1330#1331#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/root/xfmlcontrollers/ApplicationController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
+            <state relative-caret-position="153">
+              <caret line="35" column="20" lean-forward="true" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/javafx.controls/javafx/scene/control/ContextMenu.java">
+        <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/javafx.graphics/javafx/scene/Node.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="223" column="54" selection-start-line="223" selection-start-column="54" selection-end-line="223" selection-end-column="54" />
+            <state relative-caret-position="171">
+              <caret line="2855" selection-start-line="2855" selection-end-line="2855" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/javafx.graphics/javafx/scene/layout/Pane.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="153" selection-start-line="153" selection-end-line="153" />
+              <folding>
+                <element signature="e#4731#4732#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/root/xfmlcontrollers/VMFormController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="293">
+              <caret line="103" selection-start-line="103" selection-end-line="103" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/root/networkobjects/VM.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="125">
+              <caret line="100" selection-start-line="100" selection-end-line="100" />
+              <folding>
+                <element signature="method#VM#0;class#VM#0" />
+                <element signature="e#2515#2516#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>output</find>
+      <find>control</find>
+      <find>cbOs</find>
+      <find>choice</find>
+      <find>hubNode.set</find>
+      <find>setPosx</find>
+      <find>setInfs</find>
+      <find>addVmInterfaceName</find>
+      <find>set</find>
+      <find>draw</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -164,14 +173,18 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/root/xfmlcontrollers/ApplicationController.java" />
-        <option value="$PROJECT_DIR$/src/root/NodeController.java" />
+        <option value="$PROJECT_DIR$/src/root/xfmlcontrollers/HUBFormController.java" />
+        <option value="$PROJECT_DIR$/src/root/networkobjects/VMinterface.java" />
         <option value="$PROJECT_DIR$/src/root/GraphicsController.java" />
+        <option value="$PROJECT_DIR$/src/root/xfmlcontrollers/VMFormController.java" />
+        <option value="$PROJECT_DIR$/src/root/networkobjects/HubNode.java" />
+        <option value="$PROJECT_DIR$/src/root/NodeController.java" />
+        <option value="$PROJECT_DIR$/src/root/xfmlcontrollers/ApplicationController.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="-6" />
+    <option name="x" value="-7" />
     <option name="width" value="1611" />
     <option name="height" value="867" />
   </component>
@@ -181,8 +194,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -206,6 +217,13 @@
               <item name="networkConfigCSET3600" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="root" type="462c0819:PsiDirectoryNode" />
+              <item name="Images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="networkConfigCSET3600" type="b2602c69:ProjectViewProjectNode" />
+              <item name="networkConfigCSET3600" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="root" type="462c0819:PsiDirectoryNode" />
               <item name="networkobjects" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -219,10 +237,12 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553904007218" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554341403142" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/controlsfx-8.40.14.jar!/" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
@@ -274,35 +294,35 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="0" width="1611" height="867" extended-state="0" />
+    <frame x="-7" y="0" width="1611" height="867" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Image Layers" />
-      <window_info id="Designer" />
-      <window_info id="UI Designer" />
-      <window_info id="Capture Tool" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24951644" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2591876" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" weight="0.32833788" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32833788" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.18119891" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39918256" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Maven" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32833788" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Maven" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
   </component>
   <component name="editorHistoryManager">
@@ -320,52 +340,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/root/networkobjects/HubNode.java">
+    <entry file="file://$PROJECT_DIR$/src/root/xfmlcontrollers/adf.java" />
+    <entry file="file://$PROJECT_DIR$/src/root/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="24" />
-          <folding>
-            <element signature="e#1354#1355#0" expanded="true" />
-            <element signature="e#1398#1399#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="68">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/root/application.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/javafx.base/javafx/event/Event.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="31" column="63" selection-start-line="31" selection-start-column="53" selection-end-line="31" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/javafx.base/javafx/beans/property/BooleanPropertyBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="138" selection-start-line="138" selection-end-line="138" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/javafx.controls/javafx/scene/control/MenuItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="308" selection-start-line="308" selection-end-line="308" />
-          <folding>
-            <element signature="e#10201#10202#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/javafx.controls/javafx/scene/control/ContextMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="223" column="54" selection-start-line="223" selection-start-column="54" selection-end-line="223" selection-end-column="54" />
+        <state relative-caret-position="2720">
+          <caret line="197" selection-start-line="197" selection-end-line="197" />
         </state>
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/javafx.graphics/javafx/scene/Scene.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
+        <state relative-caret-position="40358">
           <caret line="2613" selection-start-line="2613" selection-end-line="2613" />
           <folding>
             <element signature="e#70522#70523#0" expanded="true" />
@@ -374,54 +366,187 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/javafx.base/javafx/event/Event.java">
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/javafx.controls/javafx/scene/control/ContextMenu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="197" selection-start-line="197" selection-end-line="197" />
+        <state relative-caret-position="2958">
+          <caret line="223" column="54" selection-start-line="223" selection-start-column="54" selection-end-line="223" selection-end-column="54" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/root/xfmlcontrollers/HUBFormController.java">
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/javafx.controls/javafx/scene/control/MenuItem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-391">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        <state relative-caret-position="649">
+          <caret line="308" selection-start-line="308" selection-end-line="308" />
+          <folding>
+            <element signature="e#10201#10202#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/javafx.base/javafx/beans/property/BooleanPropertyBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1734">
+          <caret line="138" selection-start-line="138" selection-end-line="138" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/root/application.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="37" column="18" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/root/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="36" column="33" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/javafx.graphics/javafx/application/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2312">
+          <caret line="171" column="22" selection-start-line="171" selection-start-column="22" selection-end-line="171" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/root/insertnewhubform.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/root/insertnewvmform.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="54" column="31" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.base/java/util/List.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="264" column="12" selection-start-line="264" selection-start-column="12" selection-end-line="264" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/root/networkobjects/VMinterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-12">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#587#588#0" expanded="true" />
+            <element signature="e#626#627#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/root/Images/Hub.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/root/Images/VM.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/javafx.graphics/javafx/scene/Parent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="678" selection-start-line="678" selection-end-line="678" />
+          <folding>
+            <element signature="e#27714#27715#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/javafx.graphics/javafx/scene/layout/Pane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="153" selection-start-line="153" selection-end-line="153" />
+          <folding>
+            <element signature="e#4731#4732#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/root/networkobjects/VM.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="100" selection-start-line="100" selection-end-line="100" />
+          <folding>
+            <element signature="method#VM#0;class#VM#0" />
+            <element signature="e#2515#2516#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/javafx.graphics/javafx/scene/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="2855" selection-start-line="2855" selection-end-line="2855" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/root/ConfigFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="192" column="36" selection-start-line="192" selection-start-column="36" selection-end-line="192" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/root/xfmlcontrollers/VMFormController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+        <state relative-caret-position="293">
+          <caret line="103" selection-start-line="103" selection-end-line="103" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/root/networkobjects/HubNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="70" column="10" selection-start-line="70" selection-start-column="10" selection-end-line="70" selection-end-column="10" />
+          <folding>
+            <element signature="e#1269#1270#0" expanded="true" />
+            <element signature="e#1301#1302#0" expanded="true" />
+            <element signature="e#1754#1755#0" expanded="true" />
+            <element signature="e#1785#1786#0" expanded="true" />
+            <element signature="e#1773#1774#0" expanded="true" />
+            <element signature="e#1820#1821#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/root/NodeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="59" column="20" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="20" />
+        <state relative-caret-position="149">
+          <caret line="75" column="16" selection-start-line="75" selection-start-column="16" selection-end-line="75" selection-end-column="38" />
           <folding>
-            <element signature="e#1287#1288#0" expanded="true" />
-            <element signature="e#1330#1331#0" expanded="true" />
+            <element signature="e#1454#1455#0" expanded="true" />
+            <element signature="e#1498#1499#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/root/xfmlcontrollers/ApplicationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/root/GraphicsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1078">
-          <caret line="133" column="6" selection-start-line="133" selection-start-column="6" selection-end-line="133" selection-end-column="6" />
+        <state relative-caret-position="731">
+          <caret line="111" column="21" selection-start-line="111" selection-start-column="21" selection-end-line="111" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2936#2937#0" expanded="true" />
-            <element signature="e#3038#3039#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/root/xfmlcontrollers/HUBFormController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="61" column="4" selection-start-line="61" selection-start-column="4" selection-end-line="62" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/root/xfmlcontrollers/ApplicationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="35" column="20" lean-forward="true" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
         </state>
       </provider>
     </entry>

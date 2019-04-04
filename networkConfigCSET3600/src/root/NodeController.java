@@ -3,6 +3,7 @@ package root;
 import org.w3c.dom.Node;
 import root.networkobjects.HubNode;
 import root.networkobjects.VM;
+import root.networkobjects.VMinterface;
 
 
 import java.util.List;
@@ -71,6 +72,18 @@ public class NodeController {//direct gui leverageable controller: carries out b
     public void clear(){ //wipe the entire list of nodes, used before opening a config file
         this.currentVms.clear();
         this.currentHubNodes.clear();
+    }
+    public void refreshHubVMintrfces(){
+        for (HubNode hubNode : NodeController.getNodeController().getHubNodes()) {
+            hubNode.clearVMInterfaces();
+            for(VM vm: NodeController.getNodeController().getCurrentVms()) {
+
+                for (VMinterface iface : vm.getIntrfces()) {
+                    if (Validation.isValidInterfacePair(iface, hubNode))
+                        hubNode.addVmInterfaceName(vm.getName() + "." + iface.getIntrfcLabel());
+                }
+            }
+        }
     }
 
 

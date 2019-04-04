@@ -152,15 +152,10 @@ public class ApplicationController {
 			formWindow.initModality(Modality.WINDOW_MODAL); //forces entry to be done on the form before closing
 			formWindow.initOwner(scrollPane.getScene().getWindow());
 			formWindow.showAndWait();
+			NodeController.getNodeController().refreshHubVMintrfces();
 			GraphicsController.draw(canvas, contextMenu);
 			ConfigFile.writeOutput(outputConfig);
-			/*TODO
-			GraphicsController.draw(canvas, contextMenu);
-			GraphicsController.draw(canvas, contextMenu);
-			*/
-			//TODO
-			//FileWriter.writeFile(textEditor);
-
+			refreshAll();
 		}catch(Exception e){
 			e.printStackTrace();
 		}
@@ -181,20 +176,18 @@ public class ApplicationController {
 			formWindow.initModality(Modality.WINDOW_MODAL);//forces entry to be done on the form before closing
 			formWindow.initOwner(scrollPane.getScene().getWindow());
 			formWindow.showAndWait();
-			GraphicsController.draw(canvas, contextMenu);
-			ConfigFile.writeOutput(outputConfig);
+			refreshAll();
 		}catch(Exception e){
 			e.printStackTrace();
 		}
 	}
 
 
-
-
-
-
-
-
+	private void refreshAll(){//refreshes new interfaces on hubs, redraws gui, and reconfigures output
+		NodeController.getNodeController().refreshHubVMintrfces();
+		GraphicsController.draw(canvas, contextMenu);
+		ConfigFile.writeOutput(outputConfig);
+	}
 
 	public static void saveConfigFile(String content, File file){
 		try {

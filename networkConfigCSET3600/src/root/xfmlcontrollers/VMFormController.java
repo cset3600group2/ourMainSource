@@ -101,12 +101,7 @@ public class VMFormController implements Initializable {
         if(checkName && checkOs && checkIntrfcAddresses) {//insert new VM  if all tests pass
             VM newVM = new VM(vmName, vmOs, ipAddresses);
             NodeController.getNodeController().addHostVM(newVM);
-            for (HubNode hubNode : NodeController.getNodeController().getHubNodes()) {
-                for (VMinterface iface : newVM.getIntrfces()) {
-                    if (Validation.isValidInterfacePair(iface, hubNode))
-                        hubNode.addVmInterfaceName(newVM.getName() + "." + iface.getIntrfcLabel());
-                }
-            }
+
             int indexoflast = NodeController.getNodeController().getCurrentVms().size();
             //ApplicationController.drawCurrentImgs();//draws img on canvas
             Stage stage = (Stage) btnFinish.getScene().getWindow();

@@ -59,7 +59,6 @@ public class HUBFormController implements Initializable {
 
 		if(checkName && checkSubnetandNetmask) {//validation accepted
 			NodeController.getNodeController().addHub(new HubNode(hubName, hubSubnet, hubNetmask));//create a hub
-			//TODO GraphicsController.draw(nodeController)
 			Stage stage = (Stage) btnFinish.getScene().getWindow();
 			stage.close();
 		}else { //highlight invalid field and indicate where errors exist to user

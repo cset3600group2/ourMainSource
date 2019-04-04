@@ -33,6 +33,7 @@ import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.WindowEvent;
 import root.networkobjects.HubNode;
+import root.networkobjects.VMinterface;
 //import javax.swing.JLabel;
 
 
@@ -41,7 +42,7 @@ public class GraphicsController{
     private static final int NODE_LENGTH = 100;
     private static final int NODE_WIDTH = 100;
 
-    private static Node hubInsertNode(HubNode hubNode, Pane canvas , ContextMenu contextMenu) {
+    private static Node hubInsertNode(HubNode hubNode, Pane canvas , ContextMenu contextMenu) {//returns image of hub to be added to main canvas
         Image image = new Image("root/Images/Hub.png");
         ImagePattern imagePattern = new ImagePattern(image);
 
@@ -59,7 +60,7 @@ public class GraphicsController{
         nodeContainer.relocate(hubNode.getPosx(), hubNode.getPosy());
 
 
-        nodeContainer.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
+        nodeContainer.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {//TODO DELETE SHIT RIGHT
             @Override
             public void handle(MouseEvent event) {
                 NodeController nodeController = NodeController.getNodeController();
@@ -87,25 +88,27 @@ public class GraphicsController{
     }
 
 
-    /*TODO private static Node vmInsertNode(VM vmNode, Pane canvas , ContextMenu contextMenu) {
-        Image image = new Image("root/Images/Hub.png");
+    private static Node vmInsertNode(VM vmNode, Pane canvas , ContextMenu contextMenu) {//TODO DELETE SHIT RIGHT
+        Image image = new Image("root/Images/VM.png");
         ImagePattern imagePattern = new ImagePattern(image);
 
         Rectangle node = new Rectangle(NODE_LENGTH, NODE_WIDTH);
         node.setFill(imagePattern);
 
-        //TODO Label lnodeName = new Label("HUB: " + vmNode.getName()+ "\n" + "IP: " + vmNode.get() + "\n" + "NetMask: " + hubNode.getNetmask());
+        Label lnodeName = new Label("VM: " + vmNode.getName()+ "\n" + "IP: " + vmNode.getIntrfces()+ "\n" + vmNode.getOs());
 
         //lnodeName.setOpacity(0.5);
-        //TODO lnodeName.setStyle("-fx-background-color: rgba(255,255,255,0.6); -fx-font-size: 8; ");
+        lnodeName.setStyle("-fx-background-color: rgba(255,255,255,0.6); -fx-font-size: 8; ");
+
+
+        lnodeName.setStyle("-fx-background-color: rgba(255,255,255,0.6); -fx-font-size: 8; ");
 
 
         StackPane nodeContainer = new StackPane();
         nodeContainer.getChildren().addAll(node, lnodeName);
-        nodeContainer.relocate(hubNode.getPosx(), hubNode.getPosy());
+        nodeContainer.relocate(vmNode.getPosx(), vmNode.getPosy());
 
-
-        nodeContainer.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
+       /* nodeContainer.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
                 NodeController nodeController = NodeController.getNodeController();
@@ -128,19 +131,20 @@ public class GraphicsController{
                 }
             }
         });
+        */
 
         return nodeContainer;
     }
-    */
 
 
 
 
 
 
-    public static void draw(Pane canvas, ContextMenu contextMenu) {//redraw everything when a form is completed, or file is loaded
+
+    public static void draw(Pane canvas, ContextMenu contextMenu) {//redraws everything when a form is completed, file is loaded, or node deleted
         canvas.getChildren().clear();
-        canvas.getChildren().add(createVlanNode());
+        canvas.getChildren().add(createVlanNode());//creates router and its height
 
         int tempPosX = 250;
         int tempPosY = 50;
@@ -159,21 +163,17 @@ public class GraphicsController{
                 createLine(canvas, tempPosX + 100, tempPosY + 50, tempPosX + 150, tempPosY + 50);
             }
 
-            /*TODO PLACING VMS
-            tempPosX += 200;
-            for (Map.Entry<String, VM> vmEntry : application.PatternConfig.vmMap.entrySet()) {
-                String currentVMName = vmEntry.getKey();
-                VM currentVM = application.PatternConfig.vmMap.get(currentVMName);
-                for (Map.Entry<String, String> vmInterface : currentVM.getInterfaces().entrySet()) {
 
-                    int ipClass = PatternConfig.getIPClass(application.PatternConfig.hubMap.get(currentHubName).getNetmask());
-                    String replaceRegex = "\\.\\d{1,"+ String.valueOf(ipClass) +"}\\z";
-                    if (vmInterface.getValue().replaceAll(replaceRegex, "").equals(
-                            application.PatternConfig.hubMap.get(currentHubName).getSubnet().replaceAll(replaceRegex, ""))) {
-                        application.PatternConfig.hubMap.get(currentHubName).addInf(currentVM.getName()+"."+vmInterface.getKey());
-                        currentVM.setPosX(tempPosX);
-                        currentVM.setPosY(tempPosY);
-                        canvas.getChildren().add(Graphics.VMInsert(currentVM, canvas, contextMenu));
+            tempPosX += 200;
+            for (VM vmNode: NodeController.getNodeController().getCurrentVms()) {
+                String currentVMName = vmNode.getName();
+                VM currentVM = vmNode;
+                for (VMinterface vmInterface: vmNode.getIntrfces()) {
+                    String vmIntrfcPair = currentVM.getName() + "." + vmInterface.getIntrfcLabel();
+                    if (hubNode.containsInterfaceName(vmIntrfcPair)) {
+                        currentVM.setPosx(tempPosX);
+                        currentVM.setPosy(tempPosY);
+                        canvas.getChildren().add(GraphicsController.vmInsertNode(currentVM, canvas, contextMenu));
 
                         if (haveConnections) {
                             createLine(canvas, tempPosX, tempPosY + 50, tempPosX - 50, tempPosY + 50);
@@ -185,7 +185,7 @@ public class GraphicsController{
                 }
 
             }
-            */
+
             if (!haveConnections){
                 tempPosY +=150;
             }
@@ -212,7 +212,7 @@ public class GraphicsController{
 
     }
 
-    private static Node createVlanNode() {
+    private static Node createVlanNode() {//creates the router and it's height
         int infNumber = 0;
         NodeController nodeController = NodeController.getNodeController();
 
@@ -226,7 +226,7 @@ public class GraphicsController{
                 } else {
                     infNumber += hubNode.getVmInterfaceNames().size();
                 }
-            }
+        }
         }
 
         int vlanHeight = ((infNumber * 100) + ((infNumber -1) * 50));

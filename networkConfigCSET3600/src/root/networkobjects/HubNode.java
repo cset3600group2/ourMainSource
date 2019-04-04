@@ -58,6 +58,20 @@ public class HubNode {
     {
         return this.vmInterfaceNames;
     }
+    public boolean containsInterfaceName(String vmIntrfcName){
+        boolean exists = false;
+        for (String crntIntrfcName: vmInterfaceNames){
+            if (crntIntrfcName.equals(vmIntrfcName)){
+                exists = true;
+                return exists;
+            }
+        }
+        return exists;
+    }
+    public void clearVMInterfaces(){
+        vmInterfaceNames.clear();
+    }
+
 
     public void addVmInterfaceName(String name)
     {
