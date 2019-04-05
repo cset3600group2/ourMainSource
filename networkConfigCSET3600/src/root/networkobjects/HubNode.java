@@ -1,10 +1,13 @@
 package root.networkobjects;
 
+import javafx.scene.Node;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class HubNode {
 
+    private Node canvasNode;
     private int posx;
     private int posy;
     private String name; //used as parent of record in config file e.g. 'vm Hub1 {...}
@@ -77,4 +80,11 @@ public class HubNode {
     {
         this.vmInterfaceNames.add(name);
     }
+    public void setCanvasNode(Node node){
+        this.canvasNode = node;
+    }
+    public Node getCanvasNode(){
+        return this.canvasNode;
+    }
 }
+

@@ -30,7 +30,7 @@ public class NodeController {//direct gui leverageable controller: carries out b
         currentVms.add(vm);
     }
     public List<VM> getCurrentVms(){return this.currentVms;}
-    public void removeVM(String vmName){
+    public void removeVMNode(String vmName){
         VM vm = null;
         for (VM vminCtrler: currentVms) {
             if (vminCtrler.getName().equals(vmName)) {
