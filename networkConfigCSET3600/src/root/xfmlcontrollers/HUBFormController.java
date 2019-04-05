@@ -10,13 +10,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import root.ConfigFile;
-import root.GraphicsController;
 import root.NodeController;
 import root.Validation;
 import root.networkobjects.HubNode;
 
-import java.awt.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 

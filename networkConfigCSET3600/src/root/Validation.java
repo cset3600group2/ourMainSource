@@ -131,8 +131,8 @@ public class Validation {//Validates various types of user input
 
         // Check that the VM is connecting to a Hub in the same subnet.
         if (vmNetAddr != hubNetAddr) {
-            System.err.println("VM interface address " + vmIface.getIpAddress() + " and Hub interface subnet " +
-                    hubNode.getSubnet() + " with mask " + hubNode.getNetmask() + " do not match.");
+            /*System.err.println("VM interface address " + vmIface.getIpAddress() + " and Hub interface subnet " +
+                    hubNode.getSubnet() + " with mask " + hubNode.getNetmask() + " do not match.");*/
 
             return false;
         }
@@ -169,7 +169,7 @@ public class Validation {//Validates various types of user input
     }
 
     public static boolean checkName(String name) {//checks if name is taken
-         NodeController nodeController = NodeController.getNodeController();
+        NodeController nodeController = NodeController.getNodeController();
         try {
             if(name.trim().isEmpty()) {
                 return false;

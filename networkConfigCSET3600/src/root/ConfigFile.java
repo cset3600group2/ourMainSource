@@ -12,8 +12,7 @@ import static root.Validation.isValidInterfacePair;
 public class ConfigFile {
     public static final String TAB = "        ";
 
-    public static String writeFile(String path) { //generates config to config file
-        NodeController controller = NodeController.getNodeController();
+    private static String generateConfigText(NodeController controller) {
         String outputText = "";
 
         String partialSolution = "";
@@ -34,24 +33,16 @@ public class ConfigFile {
             //Get inf for the hub
 
             String infList = "";
-            /*
-            for(VM vmObj : controller.getCurrentVms()) {
-                for(VMinterface ifaceVm : vmObj.getIntrfces()) {
-                    if(isValidInterfacePair(ifaceVm,hubObj)) {
-                        infList += vmObj.getName() + "." + ifaceVm.getIntrfcLabel() + ",";
-                        partialSolution += TAB+"("+vmObj.getName()+"."+ifaceVm.getIntrfcLabel()+" "+"V2.vinf" + partialNumber + "),\n";
-                    }
-                }
-            }
-            */
+
 
             for (String vmIfaceName: hubObj.getVmInterfaceNames()) {
                 infList += vmIfaceName + "," + " ";
                 partialSolution += TAB + "(" + vmIfaceName + " "+"V2.vinf" + partialNumber + "),\n";
             }
 
+
             if(!infList.equals("")) {
-                infList = infList.substring(0, infList.length() - 1); //Remove last comma from list
+                infList = infList.substring(0, infList.length() -2); //Remove last comma from list
             }
 
             outputText += "hub " + hubObj.getName() + " {\n" +
@@ -64,8 +55,14 @@ public class ConfigFile {
 
         if(!partialSolution.equals("")) {
             partialSolution = partialSolution.substring(0, partialSolution.length() - 2); //Remove last comma and line break from list
-            outputText += "partial_solution {\n" + partialSolution + "\n}";
+            //outputText += "partial_solution {\n" + partialSolution + "\n}"; //Ignoring for now
         }
+        return outputText;
+    }
+
+    public static String writeFile(String path) { //generates config to config file
+        NodeController controller = NodeController.getNodeController();
+        String outputText = generateConfigText(controller);
 
         //Write the string we just created to a file
         try {
@@ -92,54 +89,14 @@ public class ConfigFile {
     public static void writeOutput(TextArea textEditor) {//generates config as text to output tab
         textEditor.clear();//clear text area for accurate representation of current config
         NodeController controller = NodeController.getNodeController();
-        String outputText = "";
-
-        String partialSolution = "";
-        int partialNumber = 21;
-
-        for (VM vmObj : controller.getCurrentVms()) {
-            outputText += "vm " + vmObj.getName() + " {\n" +
-                    TAB+"os : " + vmObj.getOs() + "\n" +
-                    TAB+"ver : \"" + vmObj.getVer() + "\"\n" +
-                    TAB+"src : \"" + vmObj.getSrc() + "\"\n";
-            for (VMinterface iface : vmObj.getIntrfces()) {
-                outputText += TAB+iface.getIntrfcLabel()+" : \""+iface.getIpAddress()+"\"\n";
-            }
-            outputText += "}\n\n";
-        }
-
-        for (HubNode hubObj : controller.getHubNodes()) {
-            //Get inf for the hub
-            String infList = "";
-
-
-            for (String vmIfaceName: hubObj.getVmInterfaceNames()) {
-                infList += vmIfaceName + "," + " ";
-                partialSolution += TAB + "(" + vmIfaceName + " "+"V2.vinf" + partialNumber + "),\n";
-            }
-
-            if(!infList.equals("")) {
-                infList = infList.substring(0, infList.length() - 2); //Remove last comma from list
-            }
-
-            outputText += "hub " + hubObj.getName() + " {\n" +
-                    TAB+"inf : "+ infList + "\n" +
-                    TAB+"subnet : \"" + hubObj.getSubnet() + "\"\n" +
-                    TAB+"netmask : \"" + hubObj.getNetmask() + "\"\n";
-            outputText += "}\n\n";
-            partialNumber++;
-        }
-
-        if(!partialSolution.equals("")) {
-            partialSolution = partialSolution.substring(0, partialSolution.length() - 2); //Remove last comma and line break from list
-            outputText += "partial_solution {\n" + partialSolution + "\n}";
-        }
+        String outputText = generateConfigText(controller);
         textEditor.appendText((outputText));
 
     }
 
     public static void readFile(String path) {
         NodeController controller = NodeController.getNodeController();//retrieves the singleton instance
+        controller.clear();
         String fileLine;
         String nodeType="", nodeName="", nodeSubnet="", nodeNetmask="", nodeOs="",attributeType="", attributeVal="";
         List<String> nodeIp = new ArrayList<String>();

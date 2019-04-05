@@ -7,15 +7,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import root.Validation;
 import root.NodeController;
-import root.networkobjects.HubNode;
 import root.networkobjects.VM;
-import root.GraphicsController;
-import root.networkobjects.VMinterface;
 
 import java.net.URL;
 import java.util.*;

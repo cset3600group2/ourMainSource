@@ -3,7 +3,6 @@ package root.xfmlcontrollers;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
-import javafx.scene.canvas.GraphicsContext;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,8 +20,6 @@ import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.*;
 import root.ConfigFile;
-import root.GraphicsController;
-import root.Main;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
@@ -32,10 +29,6 @@ import root.networkobjects.VM;
 import root.networkobjects.VMinterface;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class ApplicationController {
 
@@ -264,8 +257,19 @@ public class ApplicationController {
 
 		Rectangle node = new Rectangle(NODE_LENGTH, NODE_WIDTH);
 		node.setFill(imagePattern);
+		String ips = new String();
+		int counter = 0;
+		for(VMinterface vMinterface:vmNode.getIntrfces()){
+			if (counter >= 1) {
+				ips += "\n " + "IP: " + vMinterface.getIpAddress();
+			}
+			else{
+				ips = "IP: " + vMinterface.getIpAddress();
+			}
+			counter++;
+		}
 
-		Label lnodeName = new Label("VM: " + vmNode.getName()+ "\n" + "IP: " + vmNode.getIntrfces()+ "\n" + vmNode.getOs());
+		Label lnodeName = new Label("VM: " + vmNode.getName()+ "\n" + ips);
 
 		//lnodeName.setOpacity(0.5);
 		lnodeName.setStyle("-fx-background-color: rgba(255,255,255,0.6); -fx-font-size: 8; ");
